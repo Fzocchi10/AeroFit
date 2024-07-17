@@ -15,7 +15,6 @@ public class VentaDTO {
 		this.pasajesVendidos = pasajesVendidos;
 	}
 	
-	//Getters & Setters
 	public Integer getNumeroVuelo() {
 		return numeroVuelo;
 	}

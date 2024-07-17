@@ -7,7 +7,6 @@ public class VueloDTO {
 	private Integer pasajes;
 	private Integer pasajesVendidos;
 	
-	//Constructores
 	public VueloDTO(Integer numeroVuelo, Integer pasajes, Integer pasajesVendidos) {
 		this.numeroVuelo = numeroVuelo;
 		this.pasajes = pasajes;

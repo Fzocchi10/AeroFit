@@ -16,9 +16,9 @@ public class VueloService{
 		if(pasajero.getPasajesComprados() > vuelo.getPasajesDisponibles()) {
 			return "No hay pasajes suficientes";
 		} else {
-			vuelo.setPasajesVendidos(pasajero.getPasajesComprados());
+			vuelo.ventaPasajes(pasajero.getPasajesComprados());
 			vuelo.sumarPasajesVendidos(pasajero.getPasajesComprados());
-			vuelo.guardarVenta(pasajero);
+			vuelo.agregarVenta(pasajero);
 			return "Pasajes confirmados";
 		}
 		

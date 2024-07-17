@@ -22,7 +22,7 @@ import ProyectoConcurrente.AeroFit.Service.VueloService;
 @RequestMapping("/vuelos")
 public class AeroFitController {
 	
-	@GetMapping("/todosLosVuelos")
+	@GetMapping("/listar")
 	public ResponseEntity<?> getVuelos(){
 		Collection<Vuelo> vuelos = DbStore.getInstance().findAll();
 		Collection<VueloDTO> vuelosDTO = new ArrayList<VueloDTO>();
@@ -39,12 +39,12 @@ public class AeroFitController {
 		return ResponseEntity.ok(vueloDto);
 	}
 	
-	@PutMapping("/ventaPasaje")
+	@PutMapping("/venta")
 	public ResponseEntity<?> ventaPasaje(@RequestBody VentaDTO venta){
 		Integer numeroVuelo = venta.getNumeroVuelo();
 		Vuelo vuelo = DbStore.getInstance().getVuelo(numeroVuelo);
-		Pasajero pasajeroModel = new Pasajero(venta.getNombre(), venta.getApellido(), venta.getPasajesVendidos());
+		Pasajero pasajeroModelo = new Pasajero(venta.getNombre(), venta.getApellido(), venta.getPasajesVendidos());
 		
-		return ResponseEntity.ok(VueloService.registrarVenta(vuelo, pasajeroModel));
+		return ResponseEntity.ok(VueloService.registrarVenta(vuelo, pasajeroModelo));
 	}
 }

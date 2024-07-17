@@ -31,7 +31,7 @@ public class Vuelo {
 		return vueloDto;
 	}
 	
-	public void guardarVenta(Pasajero venta) {
+	public void agregarVenta(Pasajero venta) {
 		this.ventas.add(venta);
 	}
 	
